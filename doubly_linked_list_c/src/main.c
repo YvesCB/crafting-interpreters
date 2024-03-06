@@ -12,9 +12,11 @@ int main() {
 
   print_list(&list);
 
-  struct node *one = find_node(&list, 1);
+  struct node *one = find_node(&list, 5);
 
-  print_list(&list);
+  if (one) {
+    printf("Found node with val %d\n", one->value);
+  }
 
   struct node *five = delete_node(&list, 5);
 
