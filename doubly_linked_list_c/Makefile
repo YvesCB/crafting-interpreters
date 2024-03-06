@@ -5,7 +5,7 @@ CC = gcc
 CFLAGS = -Wall -Wextra -std=c11
 
 # Directories
-SRCDIR = .
+SRCDIR = src
 BUILDDIR = build
 
 # Source files
