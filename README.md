@@ -1,25 +1,21 @@
 # Challenges
-1. There are at least six domain-specific languages used in [the little system I 
-cobbled together](https://github.com/munificent/craftinginterpreters) to write and 
-publish this book. What are they?
+1. Pick an open source implementation of a language and check out the source code.
+Try to find things related to parsing etc.
 
-2. Get a “Hello, world!” program written and running in Java. Set up whatever 
-makefiles or IDE projects you need to get it working. If you have a debugger, get 
-comfortable with it and step through your program as it runs.
+2. Just-in-time compilation tends to be the fastest way to implement dynamically 
+typed languages, but not all of them use it. What reasons are there to *not* JIT?
 
-3. Do the same thing for C. To get some practice with pointers, define a doubly 
-linked list of heap-allocated strings. Write functions to insert, find, and delete 
-items from it. Test them.
+3. Most Lisp implementations that compile to C also contain an interpreter that
+lets them execute Lisp code on the fly. Why?
 
 # Answers/Implementations
-## 1: The 6 domain-specific languages
-To start with I think `make` would count. There are markdown files on the there so
-`md` would count. There's `css` and `html` (though I'm not sure you can call those
-little.) If we're counting `css`, then I'll also count `scss`. That gets me to 5.
-Inside the .iml files for IntelliJ, there's actually `xml`. That's 6!
+## 1: Checking out the implementation of CPython
+Checked out the project. Gonna poke around.
 
-## 2: Hello World in Java
-This will be in the /hello_world_java directory.
+## 2: Why not JIT?
+JIT adds another layer of abstraction and extra implementation effort. This could
+be a reason not to use it.
 
-## 3: C doubly linked lists
-This will be in the /doubly_linked_list_c directory.
+## 3: Why do Lips transpilers also ship with an interpreter
+It can be useful to be able to immediately execute parts of your code for a language
+like Lisp, which is commonly used for scripting, I assume.
