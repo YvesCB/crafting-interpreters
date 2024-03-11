@@ -1,21 +1,34 @@
-# crafting-interpreters
-Repo for all the code made while going through the Crafting Interpreters Book.
+# Challenges 03
+## Sample programs in Lox
+Tried some small stuff.
+```
+class Breakfast {
+    init(food) {
+        this.food = food;
+    }
 
-## Progress
-- [X] Chapter 1: Introduction
-    - [X] Challange 1.1 Finding domain specific languages
-    - [X] Challange 1.2 Hello world in Java
-    - [X] Challange 1.3 Doubly linked list in C
-- [X] Chapter 2: A Map of the Territory (stopped at 2.1.7)
-    - [ ] Challange 2.1 Inspecting the source code of CPython
-    - [X] Challange 2.2 Why not use JIT
-    - [X] Challange 2.3 Why Lisp comes with an interpreter
-- [ ] Chapter 3: The Lox Language
-    - [X] Challange 3.1 Writing a little lox program
-    - [X] Challange 3.2 Open questions about lox
-    - [X] Challange 3.3 What features are missing
-- [ ] Chapter 4: The Lox Language
-    - [ ] Challange 4.1 
-    - [ ] Challange 4.2 
-    - [ ] Challange 4.3 
-- [ ] ...
+    eat() {
+        print "eating " + this.food;
+    }
+}
+
+var bf = Breakfast("eggs");
+
+bf.eat();
+```
+
+This will print `eating eggs` to the terminal.
+I also tried to pass a function as a argument like so:
+```
+fun do_operation(num, op) {
+    return op(num);
+}
+
+fun add_five(num) {
+    return num + 5;
+}
+
+print do_operation(10, add_five);
+```
+
+Which just prints `15` as expected.
