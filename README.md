@@ -10,11 +10,11 @@ Repo for all the code made while going through the Crafting Interpreters Book.
     - [ ] Challange 2.1 Inspecting the source code of CPython
     - [X] Challange 2.2 Why not use JIT
     - [X] Challange 2.3 Why Lisp comes with an interpreter
-- [ ] Chapter 3: The Lox Language
+- [X] Chapter 3: The Lox Language
     - [X] Challange 3.1 Writing a little lox program
     - [X] Challange 3.2 Open questions about lox
     - [X] Challange 3.3 What features are missing
-- [ ] Chapter 4: The Lox Language
+- [ ] Chapter 4: A Tree-Walking interpreter
     - [ ] Challange 4.1 
     - [ ] Challange 4.2 
     - [ ] Challange 4.3 
