@@ -19,3 +19,6 @@ Repo for all the code made while going through the Crafting Interpreters Book.
     - [ ] Challange 4.2 
     - [ ] Challange 4.3 
 - [ ] ...
+
+# Java version
+Basic gradle project. Build jar with `./gradlew jar` and run with `java -jar build/libs/LoxLang.jar`.
