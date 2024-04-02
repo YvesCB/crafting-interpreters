@@ -16,3 +16,19 @@ jar {
     attributes 'Main-Class': 'com.craftinginterpreters.lox.Lox'
   }
 }
+
+task genAstJar(type: Jar) {
+  from sourceSets.main.output
+  archiveClassifier = 'generateAst'
+  manifest {
+    attributes 'Main-Class': 'com.craftinginterpreters.tool.GenerateAst'
+  }
+}
+
+task printAst(type: Jar) {
+  from sourceSets.main.output
+  archiveClassifier = 'printAst'
+  manifest {
+    attributes 'Main-Class': 'com.craftinginterpreters.lox.AstPrinter'
+  }
+}
