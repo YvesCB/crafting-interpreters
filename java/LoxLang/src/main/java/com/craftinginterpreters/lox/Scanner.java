@@ -106,6 +106,12 @@ public class Scanner {
           // A comment will go to the end of the line.
           while (peek() != '\n' && !isAtEnd())
             advance();
+        } else if (match('*')) {
+          while (peek() != '*' && peekNext() != '/' && !isAtEnd()) {
+            if (match('\n'))
+              line++;
+            advance();
+          }
         } else {
           addToken(SLASH);
         }
