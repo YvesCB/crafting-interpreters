@@ -28,3 +28,26 @@ Repo for all the code made while going through the Crafting Interpreters Book.
 
 # Java version
 Basic gradle project. Build jar with `./gradlew jar` and run with `java -jar build/libs/LoxLang.jar`.
+
+# Challenges 06
+## 6.1 Support for the `,`-Operator
+In C, the comma operator is a binary operator which evaluates its first operand 
+and then discards the result before it evaluates its second operand.
+
+It is generally used when the first operand has a desirable side effect but its
+result is not needed for the remaining code. We often see assignment done with
+commas, but that is **not** the comma operator! For assignment it, it really is
+just a separator.
+
+```c
+// this is just a separation
+int a = 1, b = 5, c = 9;
+
+```
+```c
+// this is the actual comma operator
+// the first usage is still just separation
+// the second usage assigns b to i
+int a = 1, b = 2, c = 3;
+int i = (a, b);
+```
