@@ -51,3 +51,56 @@ int a = 1, b = 5, c = 9;
 int a = 1, b = 2, c = 3;
 int i = (a, b);
 ```
+
+### Implementation
+To implement this, we need can use the existing `COMMA` `Tokentype`, that we 
+already have available. We need to implement parsing it correctly.
+C implements the comma operator as having the lowest precedence, meaning it is
+evaluated at the very end. Thus we will add it in as as a first step, even before
+equality.
+
+Our new grammar will look like this:
+```
+expression     → comma ;
+comma          → equality ( "," equality )* ;
+equality       → comparison ( ( "!=" | "==" ) comparison )* ;
+comparison     → term ( ( ">" | ">=" | "<" | "<=" ) term )* ;
+term           → factor ( ( "-" | "+" ) factor )* ;
+factor         → unary ( ( "/" | "*" ) unary )* ;
+unary          → ( "!" | "-" ) unary
+               | primary ;
+primary        → NUMBER | STRING | "true" | "false" | "nil"
+               | "(" expression ")" ;
+```
+To implement this, we add the following code to `Parser.java`
+```java
+private Expr expression() {
+  return comma();
+}
+
+private Expr comma() {
+  Expr expr = equality();
+
+  while (match(COMMA)) {
+    Token operator = previous();
+    Expr right = equality();
+    expr = new Expr.Binary(expr, operator, right);
+  }
+
+  return expr;
+}
+```
+
+It contains the method to parse the comma operation and we also changed
+`expression` to first parse a `comma` operation, rather than an `equality`.
+
+Compiling and running our code, we can see that it now parses `comma` operations
+at the lowest precedence:
+```
+Going to REPL
+> 1+2,2
+(, (+ 1.0 2.0) 2.0)
+```
+
+**Still need to check if the associativity is actually correct here! Haven't done
+that yet**
