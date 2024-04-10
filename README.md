@@ -24,6 +24,9 @@ Repo for all the code made while going through the Crafting Interpreters Book.
     - [ ] Challenge 5.2 Complementary pattern to visitor pattern in functional lang
     - [X] Challenge 5.3 RPN
 - [ ] Chapter 6: Representing code
+    - [X] Challenge 6.1 Adding support for the comma operator
+    - [ ] Challenge 6.2 Adding support for "ternary" operator `?:`
+    - [ ] Challenge 6.3 Error production s for each binary operation without left-hand operand
 - [ ] ...
 
 # Java version
