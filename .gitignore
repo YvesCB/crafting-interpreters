@@ -1,2 +1,5 @@
 java/LoxLang/bin/main/com/craftinginterpreters/lox
 java/LoxLang/target
+java/LoxLang/.settings
+java/LoxLang/.classpath
+java/LoxLang/.project
