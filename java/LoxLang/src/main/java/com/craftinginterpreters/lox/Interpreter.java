@@ -4,8 +4,10 @@ import java.util.List;
 
 public class Interpreter implements Expr.Visitor<Object>, Stmt.Visitor<Void> {
     private Environment environment = new Environment();
+    private boolean isRepl = false;
 
-    void interpret(List<Stmt> statements) {
+    void interpret(List<Stmt> statements, boolean isRepl) {
+        this.isRepl = isRepl;
         try {
             for (Stmt statement : statements) {
                 execute(statement);
@@ -43,7 +45,11 @@ public class Interpreter implements Expr.Visitor<Object>, Stmt.Visitor<Void> {
 
     @Override
     public Object visitVariableExpr(Expr.Variable expr) {
-        return environment.get(expr.name);
+        Object value = environment.get(expr.name);
+        if (value == null) {
+            throw new RuntimeError(expr.name, "Trying to use uninizialized variable");
+        }
+        return value;
     }
 
     @Override
@@ -109,7 +115,10 @@ public class Interpreter implements Expr.Visitor<Object>, Stmt.Visitor<Void> {
 
     @Override
     public Void visitExpressionStmt(Stmt.Expression stmt) {
-        evaluate(stmt.expression);
+        Object result = evaluate(stmt.expression);
+        if (isRepl) {
+            System.out.println(result);
+        }
         return null;
     }
 

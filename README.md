@@ -32,9 +32,28 @@ Repo for all the code made while going through the Crafting Interpreters Book.
     - [ ] Challenge 7.2 Define + such that if either operand is a string, the other is converted to string
     - [ ] Challenge 7.3 Implement checking for divide by zero
 - [X] Chapter 8: Statements and State
-    - [ ] Challenge 8.1 REPL should evaluate and print expressions right away
-    - [ ] Challenge 8.2 Make evaluating an uninitialized variable an runtime error
-    - [ ] Challenge 8.3 Declaration with inner usage of variable
+    - [X] Challenge 8.1 REPL should evaluate and print expressions right away
+    - [X] Challenge 8.2 Make evaluating an uninitialized variable an runtime error
+    - [X] Challenge 8.3 Declaration with inner usage of variable
 
 # Java version
 Written with Java 21 and compiled and packaged with maven.
+
+# Challenge 8
+
+## 8.3
+The program
+
+```
+var a = 1;
+{
+    var a = a + 2;
+    print a;
+}
+```
+
+prints `3`. This is what I would expect. Assignment and declaration should be right-associative.
+This means that `var a = a + 2` should first evaluate `a + 2` as an expression. Since `a` is 
+declared in the global scope to be 1, this expression should return 3. The next parsing step
+would be to declare the local variable `a` to be the result of the expression and that is 
+what is happening.
