@@ -32,9 +32,13 @@ Repo for all the code made while going through the Crafting Interpreters Book.
     - [ ] Challenge 7.2 Define + such that if either operand is a string, the other is converted to string
     - [ ] Challenge 7.3 Implement checking for divide by zero
 - [X] Chapter 8: Statements and State
-    - [ ] Challenge 8.1 REPL should evaluate and print expressions right away
-    - [ ] Challenge 8.2 Make evaluating an uninitialized variable an runtime error
-    - [ ] Challenge 8.3 Declaration with inner usage of variable
+    - [X] Challenge 8.1 REPL should evaluate and print expressions right away
+    - [X] Challenge 8.2 Make evaluating an uninitialized variable an runtime error
+    - [X] Challenge 8.3 Declaration with inner usage of variable
+- [X] Chapter 9: Control Flow
+    - [/] Challenge 9.1 Implementing control flow with first-class functions and dynamic dispatch
+    - [/] Challenge 9.2 Same for looping
+    - [/] Challenge 9.3 Adding support for Break
 
 # Java version
 Written with Java 21 and compiled and packaged with maven.
