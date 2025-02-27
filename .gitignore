@@ -1,5 +1,9 @@
-java/LoxLang/bin/main/com/craftinginterpreters/lox
-java/LoxLang/target
-java/LoxLang/.settings
-java/LoxLang/.classpath
-java/LoxLang/.project
+jlox/LoxLang/bin/main/com/craftinginterpreters/lox
+jlox/LoxLang/target
+jlox/LoxLang/.settings
+jlox/LoxLang/.classpath
+jlox/LoxLang/.project
+clox/.cache/clangd/index
+clox/target
+clox/clox
+clox/compile_commands.json
