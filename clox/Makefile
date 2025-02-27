@@ -1,5 +1,5 @@
 CC = gcc
-CFLAGS = -std=c11 -Wall -MMD -I. -g
+CFLAGS = -std=c11 -Wall -MMD -g
 
 ODIR = target
 SRCDIR = src
