@@ -1,7 +1,7 @@
 #include "vm.h"
 #include "common.h"
 #include "debug.h"
-#include "src/chunk.h"
+
 #include <stdio.h>
 
 VM vm;
@@ -66,6 +66,7 @@ static InterpretResult run() {
     }
     }
   }
+#undef BINARY_OP
 #undef READ_CONSTANT
 #undef READ_BYTE
 }
