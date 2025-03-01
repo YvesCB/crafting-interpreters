@@ -2,6 +2,7 @@
 Repo for all the code made while going through the Crafting Interpreters Book.
 
 ## Progress
+### Intro
 - [X] Chapter 1: Introduction
     - [X] Challenge 1.1 Finding domain specific languages
     - [X] Challenge 1.2 Hello world in Java
@@ -14,6 +15,8 @@ Repo for all the code made while going through the Crafting Interpreters Book.
     - [X] Challenge 3.1 Writing a little lox program
     - [X] Challenge 3.2 Open questions about lox
     - [X] Challenge 3.3 What features are missing
+
+### A Tree-Walking interpreter
 - [X] Chapter 4: A Tree-Walking interpreter
     - [X] Challenge 4.1 Regular grammars
     - [X] Challenge 4.2 Effect of spaces in other languages
@@ -39,6 +42,17 @@ Repo for all the code made while going through the Crafting Interpreters Book.
     - [/] Challenge 9.1 Implementing control flow with first-class functions and dynamic dispatch
     - [/] Challenge 9.2 Same for looping
     - [/] Challenge 9.3 Adding support for Break
+- [X] Chapter 10: Functions
+- [X] Chapter 11: Resolve Bindings
+- [X] Chapter 12: Classes
+- [X] Chapter 13: Inheritance
+
+### A Bytecode Virtual Machine
+- [X] Chapter 14: Chunks of bytecode
+- [X] Chapter 15: A virtual machine
 
 # Java version
 Written with Java 21 and compiled and packaged with maven.
+
+# C version
+Compiling with gcc and the C11 standard.
