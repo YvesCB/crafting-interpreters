@@ -155,8 +155,8 @@ static void beginScope() { current->scopeDepth++; }
 static void endScope() {
   current->scopeDepth--;
 
-  while (current->scopeDepth > 0 &&
-         current->locals[current->scopeDepth - 1].depth > current->scopeDepth) {
+  while (current->localCount > 0 &&
+         current->locals[current->localCount - 1].depth > current->scopeDepth) {
     emitByte(OP_POP);
     current->localCount--;
   }
@@ -175,11 +175,11 @@ static uint8_t identifierConstant(Token *name) {
 static bool identifiersEqual(Token *a, Token *b) {
   if (a->length != b->length)
     return false;
-  return memcmp(a->start, b->start, a->length);
+  return memcmp(a->start, b->start, a->length) == 0;
 }
 
 static int resolveLocal(Compiler *compiler, Token *name) {
-  for (int i = compiler->localCount - 1; i <= 0; i--) {
+  for (int i = compiler->localCount - 1; i >= 0; i--) {
     Local *local = &compiler->locals[i];
     if (identifiersEqual(name, &local->name)) {
       if (local->depth == -1) {
